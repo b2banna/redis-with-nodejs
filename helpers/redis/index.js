@@ -1,10 +1,11 @@
 'use strict';
 
-const PORT_REDIS = process.env.PORT_REDIS || 6379;
-const redisClient = require("async-redis").createClient({
-    host: 'redis-server',
-    post: PORT_REDIS
-});
+const redis = require("async-redis");
+
+const { NODE_ENV, REDIS_HOST } = process.env;
+const redisClient = NODE_ENV === 'production' ?
+    redis.createClient({ host: REDIS_HOST }) :
+    redis.createClient();
 
 redisClient.on("connect", function () {
     console.log("Redis Server Connected!");
