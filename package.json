@@ -1,7 +1,8 @@
 {
-  "name": "express-redis-node",
+  "name": "redis-with-nodejs",
   "version": "1.0.0",
-  "description": "",
+  "description": "Redis with Node.js",
+  "repository": "https://github.com/b2banna/redis-with-nodejs.git",
   "main": "index.js",
   "scripts": {
     "start": "node index",
