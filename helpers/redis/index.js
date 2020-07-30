@@ -1,7 +1,10 @@
 'use strict';
 
 const PORT_REDIS = process.env.PORT_REDIS || 6379;
-const redisClient = require("async-redis").createClient(PORT_REDIS);
+const redisClient = require("async-redis").createClient({
+    host: 'redis-server',
+    post: PORT_REDIS
+});
 
 redisClient.on("connect", function () {
     console.log("Redis Server Connected!");
