@@ -13,5 +13,4 @@ services:
     depends_on:
       - redis-server
     environment:
-      PORT: 5000
-      PORT_REDIS: 5001
+      REDIS_HOST: redis-server
